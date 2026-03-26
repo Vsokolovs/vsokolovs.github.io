@@ -71,10 +71,38 @@ function renderSite(){
   const pg=document.getElementById('projectsGrid');
   if(!d.projects||!d.projects.length) pg.innerHTML='<div class="empty-state">Projects coming soon.</div>';
   else pg.innerHTML=d.projects.map(p=>`<div class="project-card"><h3>${esc(p.title)}</h3><div class="project-tech">${esc(p.tech)}</div><p>${esc(p.description)}</p>${p.link?`<a class="project-link" href="${esc(p.link)}" target="_blank">View Project &rarr;</a>`:''}</div>`).join('');
+
+  renderRightPanel();
 }
 
 function toggleSidebar(){document.getElementById('sidebar').classList.toggle('open');document.getElementById('sidebarOverlay').classList.toggle('active');}
 function closeSidebar(){document.getElementById('sidebar').classList.remove('open');document.getElementById('sidebarOverlay').classList.remove('active');}
+
+function renderRightPanel(){
+  const d=DATA;
+  const c=document.getElementById('rightPanelProjects');
+  if(!d.projects||!d.projects.length){
+    c.innerHTML='<div class="rp-empty">Projects coming soon.</div>';
+  } else {
+    c.innerHTML=d.projects.map(p=>`<div class="rp-card"><h3>${esc(p.title)}</h3><div class="rp-tech">${esc(p.tech)}</div><p>${esc(p.description)}</p>${p.link?`<a class="rp-link" href="${esc(p.link)}" target="_blank" rel="noopener">View Project &rarr;</a>`:''}</div>`).join('');
+  }
+}
+
+function toggleRightPanel(){
+  const isOpen=document.getElementById('rightPanel').classList.toggle('open');
+  document.getElementById('rightPanelOverlay').classList.toggle('active',isOpen);
+  document.getElementById('rightPanelToggle').style.display=isOpen?'none':'';
+}
+
+function navigateProjects(){
+  if(window.innerWidth<=1400){
+    if(!document.getElementById('rightPanel').classList.contains('open')){
+      toggleRightPanel();
+    }
+  } else {
+    document.getElementById('rightPanel').scrollTo({top:0,behavior:'smooth'});
+  }
+}
 
 async function sha256(m){const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(m));return Array.from(new Uint8Array(b)).map(x=>x.toString(16).padStart(2,'0')).join('');}
 

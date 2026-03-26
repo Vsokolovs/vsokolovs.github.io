@@ -30,7 +30,7 @@
     <nav class="sidebar-nav">
       <a href="#profile" onclick="closeSidebar()">Profile</a>
       <a href="#experience" onclick="closeSidebar()">Experience</a>
-      <a href="#projects" onclick="closeSidebar()">Projects</a>
+      <a href="javascript:void(0)" onclick="closeSidebar();navigateProjects()">Projects</a>
     </nav>
   </aside>
 
@@ -57,7 +57,19 @@
       </footer>
     </div>
   </main>
+
+  <aside class="right-panel" id="rightPanel">
+    <div class="right-panel-header">
+      <h2 class="right-panel-title">Projects</h2>
+      <p class="right-panel-subtitle">Selected work and things I've built</p>
+      <button class="right-panel-close" onclick="toggleRightPanel()" aria-label="Close">&times;</button>
+    </div>
+    <div class="right-panel-projects" id="rightPanelProjects"></div>
+  </aside>
 </div>
+
+<div class="right-panel-overlay" id="rightPanelOverlay" onclick="toggleRightPanel()"></div>
+<button class="right-panel-toggle" id="rightPanelToggle" onclick="toggleRightPanel()" aria-label="Projects">Projects</button>
 
 <div class="admin-overlay" id="adminOverlay">
   <div class="admin-panel">
