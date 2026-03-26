@@ -48,7 +48,6 @@ function renderHome(){
   // Sidebar
   if($('sidebarName')) $('sidebarName').textContent=d.name;
   if($('sidebarTitle')) $('sidebarTitle').textContent=d.title;
-  if($('mobileName')) $('mobileName').textContent=d.name;
   if($('photoInitials')) $('photoInitials').textContent=d.name.split(' ').map(function(w){return w[0];}).join('').slice(0,2);
 
   // Contact
@@ -113,23 +112,29 @@ function renderProjects(){
   }
 }
 
-// ===== SIDEBAR TOGGLE =====
+// ===== SIDEBAR TOGGLE (mobile) =====
 function toggleSidebar(){
-  $('sidebar').classList.toggle('open');
-  $('sidebarOverlay').classList.toggle('active');
+  var sb=$('sidebar'), ov=$('sidebarOverlay');
+  if(sb) sb.classList.toggle('open');
+  if(ov) ov.classList.toggle('active');
 }
 function closeSidebar(){
-  $('sidebar').classList.remove('open');
-  $('sidebarOverlay').classList.remove('active');
+  var sb=$('sidebar'), ov=$('sidebarOverlay');
+  if(sb) sb.classList.remove('open');
+  if(ov) ov.classList.remove('active');
 }
 
 // ===== INIT =====
 async function init(){
   DATA=await loadData();
-  // Render home if sidebar elements exist
   if($('sidebarName')) renderHome();
-  // Render projects if grid exists
   if($('projectsGrid')) renderProjects();
+
+  // Mobile hamburger
+  var hb=$('hamburgerBtn');
+  if(hb) hb.addEventListener('click', toggleSidebar);
+  var ov=$('sidebarOverlay');
+  if(ov) ov.addEventListener('click', closeSidebar);
 }
 
 init();

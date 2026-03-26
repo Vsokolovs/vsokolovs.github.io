@@ -10,11 +10,17 @@
 </head>
 <body>
 
-<div class="mobile-header">
-  <span class="mname" id="mobileName"></span>
-  <button class="hamburger" onclick="toggleSidebar()" aria-label="Menu">&#9776;</button>
-</div>
-<div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+<header class="topbar">
+  <div class="topbar-inner">
+    <button class="topbar-hamburger" id="hamburgerBtn" aria-label="Menu">&#9776;</button>
+    <a class="topbar-brand" href="index.html">CV</a>
+    <nav class="topbar-nav">
+      <a href="index.html" class="topbar-link active">CV</a>
+      <a href="projects.html" class="topbar-link">Projects</a>
+    </nav>
+  </div>
+</header>
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
 
 <div class="site-wrapper">
   <aside class="sidebar" id="sidebar">
@@ -27,12 +33,6 @@
       <div class="sidebar-section"><div class="sidebar-section-label">Skills</div><div id="skillsList"></div></div>
       <div class="sidebar-section"><div class="sidebar-section-label">Languages</div><div id="languagesList"></div></div>
     </div>
-    <nav class="sidebar-nav">
-      <a href="index.html" class="active" onclick="closeSidebar()">Home</a>
-      <a href="#profile" onclick="closeSidebar()">Profile</a>
-      <a href="#experience" onclick="closeSidebar()">Experience</a>
-      <a href="projects.html" onclick="closeSidebar()">Projects</a>
-    </nav>
   </aside>
 
   <main class="main-content">
