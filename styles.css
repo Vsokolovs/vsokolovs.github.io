@@ -27,14 +27,14 @@ body {
   color: var(--main-text);
   line-height: 1.7;
   font-size: 16px;
+  display: flex; flex-direction: column; min-height: 100vh;
 }
 
-.site-wrapper { display: flex; min-height: 100vh; }
+.site-wrapper { display: flex; flex: 1; }
 
 /* ===== SIDEBAR ===== */
 .sidebar {
   width: var(--sidebar-width);
-  min-height: 100vh;
   background: var(--sidebar-bg);
   color: var(--sidebar-text);
   display: flex;
@@ -126,26 +126,22 @@ body {
 .topbar-inner {
   max-width: 1200px; margin: 0 auto;
   padding: 0 32px; height: 52px;
-  display: flex; align-items: center; justify-content: space-between;
+  display: flex; align-items: center; justify-content: center;
+  position: relative;
 }
-.topbar-brand {
-  font-family: var(--font-display);
-  font-size: 15px; font-weight: 700;
-  color: #fff; text-decoration: none;
-  letter-spacing: 1.5px; text-transform: uppercase;
-}
-.topbar-nav { display: flex; gap: 4px; }
+.topbar-nav { display: flex; gap: 8px; }
 .topbar-link {
   color: rgba(255,255,255,0.5); text-decoration: none;
-  font-size: 12px; font-weight: 600;
+  font-size: 14px; font-weight: 600;
   letter-spacing: 1.5px; text-transform: uppercase;
-  padding: 6px 12px; border-radius: 4px;
+  padding: 6px 16px; border-radius: 4px;
   transition: all 0.2s;
 }
 .topbar-link:hover, .topbar-link.active { color: var(--sidebar-accent); }
 .topbar-hamburger {
   display: none; background: none; border: none;
   color: #fff; font-size: 22px; cursor: pointer; padding: 4px;
+  position: absolute; left: 18px;
 }
 .sidebar-overlay {
   display: none; position: fixed; inset: 0;
@@ -154,7 +150,7 @@ body {
 .sidebar-overlay.active { display: block; }
 
 /* ===== MAIN CONTENT ===== */
-.main-content { flex: 1; min-height: 100vh; }
+.main-content { flex: 1; }
 .content-area { max-width: 780px; padding: 56px 52px 80px; }
 
 .section-heading {
@@ -196,8 +192,12 @@ section { margin-bottom: 48px; }
 .timeline-role { font-family: var(--font-accent); font-size: 14px; color: var(--muted); font-style: italic; margin-bottom: 8px; }
 .timeline-desc { font-size: 14px; line-height: 1.75; }
 
-/* Footer (home page) */
-.site-footer { border-top: 1px solid var(--border); padding: 18px 0; margin-top: 32px; font-size: 13px; color: var(--muted); }
+/* Footer */
+.site-footer {
+  background: var(--sidebar-dark); color: rgba(255,255,255,0.4);
+  padding: 18px 0; font-size: 13px; text-align: center;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
 
 /* ===== PROJECTS PAGE ===== */
 
