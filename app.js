@@ -9,7 +9,7 @@ const DEFAULT_DATA = {
     {school:"Banking University (BA)",degree:"Master's in Finance & Banking",years:"2017 – 2019"},
     {school:"Riga Graduate School of Law",degree:"Bachelor in Law & Business Program",years:"2014 – 2016"}
   ],
-  skills:["Management Skills","Product Ownership","Agile Delivery","SQL/Python/Azure Stack","Databricks/dbt","Leadership","Business & Communication","Solution Design"],
+  skills:["Management Skills","Product Ownership","Agile Delivery","SQL","Python","Azure Stack","Databricks","dbt","Leadership","Business & Communication","Solution Design","Apache Kafka","Apache Spark","Polars","Pandas","PostgreSQL","MySQL","GDScript","Godot","Apache Iceberg","Microsoft Fabric","PowerBI","Looker"],
   languages:[{name:"English",level:95},{name:"Latvian",level:75},{name:"Russian",level:100}],
   experience:[
     {date:"2022 – Present",company:"Emergn",role:"Lead Data Engineer → D&A Practice Lead",description:"Took data owner responsibilities for several client data initiatives: defining scope, aligning with business stakeholders, managing data governance and implementation, preparing roadmaps, and prioritizing delivery for engineering teams. Owned end-to-end delivery of data products: data ingestion, data governance, transformation logic, quality processes, and BI output."},
