@@ -69,7 +69,8 @@ body {
   width: 130%; height: 130%;
   object-fit: cover;
   object-position: 60% 15%;
-  filter: grayscale(100%);
+  -webkit-filter: grayscale(1) saturate(0) contrast(1.06);
+  filter: grayscale(1) saturate(0) contrast(1.06);
 }
 .photo-frame .initials {
   font-family: var(--font-display);
