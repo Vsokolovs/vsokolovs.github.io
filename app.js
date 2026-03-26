@@ -82,9 +82,9 @@ function renderRightPanel(){
   const d=DATA;
   const c=document.getElementById('rightPanelProjects');
   if(!d.projects||!d.projects.length){
-    c.innerHTML='<div class="rp-empty">Projects coming soon.</div>';
+    c.innerHTML='<div class="empty-state">Projects coming soon.</div>';
   } else {
-    c.innerHTML=d.projects.map(p=>`<div class="rp-card"><h3>${esc(p.title)}</h3><div class="rp-tech">${esc(p.tech)}</div><p>${esc(p.description)}</p>${p.link?`<a class="rp-link" href="${esc(p.link)}" target="_blank" rel="noopener">View Project &rarr;</a>`:''}</div>`).join('');
+    c.innerHTML='<div class="projects-grid">'+d.projects.map(p=>`<div class="project-card"><h3>${esc(p.title)}</h3><div class="project-tech">${esc(p.tech)}</div><p>${esc(p.description)}</p>${p.link?`<a class="project-link" href="${esc(p.link)}" target="_blank" rel="noopener">View Project &rarr;</a>`:''}</div>`).join('')+'</div>';
   }
 }
 
