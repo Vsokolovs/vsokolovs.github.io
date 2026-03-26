@@ -1,0 +1,73 @@
+{
+  "name": "Vladislavs Sokolovs",
+  "title": "Practice Lead: Data & Analytics",
+  "profile": "Data specialist with strong engineering background, experienced in designing and delivering data products across enterprise environments. Skilled in turning business needs into structured data solutions, owning product vision and roadmap, collaborating with cross-functional teams, and ensuring high-quality delivery. 7+ years across data engineering, analytics, finance, and BI development — giving me a pragmatic, end-to-end product mindset, based on best practices in governance and architecture.",
+  "contact": {
+    "phone": "+37126307373",
+    "email": "vladislavs.sokolov@gmail.com",
+    "location": "Jurmala, Latvia",
+    "linkedin": "",
+    "github": ""
+  },
+  "education": [
+    {
+      "school": "Swiss School of Business",
+      "degree": "Master's in Business Administration",
+      "years": "2017 – 2019"
+    },
+    {
+      "school": "Banking University (BA)",
+      "degree": "Master's in Finance & Banking",
+      "years": "2017 – 2019"
+    },
+    {
+      "school": "Riga Graduate School of Law",
+      "degree": "Bachelor in Law & Business Program",
+      "years": "2014 – 2016"
+    }
+  ],
+  "skills": [
+    "Management Skills",
+    "Product Ownership",
+    "Agile Delivery",
+    "SQL/Python/Azure Stack",
+    "Databricks/dbt",
+    "Leadership",
+    "Business & Communication",
+    "Solution Design"
+  ],
+  "languages": [
+    { "name": "English", "level": 95 },
+    { "name": "Latvian", "level": 75 },
+    { "name": "Russian", "level": 100 }
+  ],
+  "experience": [
+    {
+      "date": "2022 – Present",
+      "company": "Emergn",
+      "role": "Lead Data Engineer → D&A Practice Lead",
+      "description": "Took data owner responsibilities for several client data initiatives: defining scope, aligning with business stakeholders, managing data governance and implementation, preparing roadmaps, and prioritizing delivery for engineering teams. Owned end-to-end delivery of data products: data ingestion, data governance, transformation logic, quality processes, and BI output."
+    },
+    {
+      "date": "2019 – 2022",
+      "company": "Luminor Bank",
+      "role": "Mid-Senior Data Engineer / Data Analyst",
+      "description": "Supported and improved enterprise data products used across the bank (ETL pipelines, reporting layers, quality checks). Partnered with business stakeholders to gather requirements and translate them into scalable engineering tasks. Helped define acceptance criteria, test coverage, and documentation for multiple data initiatives."
+    },
+    {
+      "date": "2017 – 2019",
+      "company": "L'Oreal Baltics",
+      "role": "Corporate Finance Controller",
+      "description": "Delivered analytical insights, supported system implementations, handled cost control and budgeting. Led rollout of new accounting and travel expense systems."
+    }
+  ],
+  "projects": [
+    {
+      "title": "Enterprise Data Platform",
+      "tech": "Azure · Databricks · dbt",
+      "description": "Designed and delivered a scalable data platform serving multiple business units with governed, high-quality data products.",
+      "link": ""
+    }
+  ],
+  "passwordHash": "8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918"
+}
