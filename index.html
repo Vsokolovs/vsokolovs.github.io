@@ -8,56 +8,51 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
-<body data-page="home">
-<header class="topbar">
-  <div class="topbar-inner">
-    <a class="brand" href="index.html" id="topName"></a>
-    <nav class="topbar-nav">
-      <a href="#profile" class="top-link">Profile</a>
-      <a href="#experience" class="top-link">Experience</a>
-      <a href="#skills" class="top-link">Skills</a>
-      <a href="#contact" class="top-link">Contact</a>
-      <a href="projects.html" class="top-link" id="projectsNavLink">Projects</a>
+<body>
+
+<div class="mobile-header">
+  <span class="mname" id="mobileName"></span>
+  <button class="hamburger" onclick="toggleSidebar()" aria-label="Menu">&#9776;</button>
+</div>
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+
+<div class="site-wrapper">
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-inner">
+      <div class="photo-frame"><img src="My%20Photo.jpg" alt="Photo" class="photo-img"><span class="initials" id="photoInitials"></span></div>
+      <h1 class="sidebar-name" id="sidebarName"></h1>
+      <p class="sidebar-title" id="sidebarTitle"></p>
+      <div class="sidebar-section"><div class="sidebar-section-label">Contact</div><div id="contactList"></div></div>
+      <div class="sidebar-section"><div class="sidebar-section-label">Education</div><div id="educationList"></div></div>
+      <div class="sidebar-section"><div class="sidebar-section-label">Skills</div><div id="skillsList"></div></div>
+      <div class="sidebar-section"><div class="sidebar-section-label">Languages</div><div id="languagesList"></div></div>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="index.html" class="active" onclick="closeSidebar()">Home</a>
+      <a href="#profile" onclick="closeSidebar()">Profile</a>
+      <a href="#experience" onclick="closeSidebar()">Experience</a>
+      <a href="projects.html" onclick="closeSidebar()">Projects</a>
     </nav>
-  </div>
-</header>
+  </aside>
 
-<main class="page-shell">
-  <section class="intro-card" id="profile">
-    <div class="intro-photo-wrap">
-      <div class="photo-frame">
-        <img src="My%20Photo.jpg" alt="Photo" class="photo-img">
-      </div>
+  <main class="main-content">
+    <div class="content-area">
+      <section id="profile">
+        <h2 class="section-heading">Profile</h2>
+        <p class="section-subtitle">Who I am and what I bring</p>
+        <p class="profile-text" id="profileText"></p>
+      </section>
+      <section id="experience">
+        <h2 class="section-heading">Experience</h2>
+        <p class="section-subtitle">Where the road has taken me</p>
+        <div class="timeline" id="experienceTimeline"></div>
+      </section>
+      <footer class="site-footer">
+        <span>&copy; <span id="footerYear"></span> <span id="footerName"></span></span>
+      </footer>
     </div>
-    <div>
-      <h1 class="hero-name" id="heroName"></h1>
-      <p class="hero-title" id="heroTitle"></p>
-      <p class="profile-text" id="profileText"></p>
-    </div>
-  </section>
-
-  <section id="experience">
-    <h2 class="section-heading">Experience</h2>
-    <p class="section-subtitle">Where the road has taken me</p>
-    <div class="timeline" id="experienceTimeline"></div>
-  </section>
-
-  <section id="skills">
-    <h2 class="section-heading">Skills</h2>
-    <p class="section-subtitle">Technologies and strengths I work with</p>
-    <div class="skills-cloud" id="skillsList"></div>
-  </section>
-
-  <section id="contact">
-    <h2 class="section-heading">Contact</h2>
-    <p class="section-subtitle">Get in touch</p>
-    <div class="contact-grid" id="contactList"></div>
-  </section>
-
-  <footer class="site-footer">
-    <span>&copy; <span id="footerYear"></span> <span id="footerName"></span></span>
-  </footer>
-</main>
+  </main>
+</div>
 
 <script src="app.js"></script>
 </body>
