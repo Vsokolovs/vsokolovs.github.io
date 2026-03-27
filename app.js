@@ -48,7 +48,9 @@ function renderHome(){
   // Sidebar
   if($('sidebarName')) $('sidebarName').textContent=d.name;
   if($('sidebarTitle')) $('sidebarTitle').textContent=d.title;
-  if($('photoInitials')) $('photoInitials').textContent=d.name.split(' ').map(function(w){return w[0];}).join('').slice(0,2);
+  var initials=d.name.split(' ').map(function(w){return w[0];}).join('').slice(0,2);
+  if($('photoInitials')) $('photoInitials').textContent=initials;
+  if($('topbarBrand')) $('topbarBrand').textContent=initials;
 
   // Contact
   var ch='';
@@ -112,6 +114,7 @@ function renderProjects(){
   var d=DATA;
   document.title=d.name+' \u2014 Projects';
 
+  if($('topbarBrand')) $('topbarBrand').textContent=d.name.split(' ').map(function(w){return w[0];}).join('').slice(0,2);
   if($('projectsBrand')) $('projectsBrand').textContent=d.name;
   if($('footerYear')) $('footerYear').textContent=new Date().getFullYear();
   if($('footerName')) $('footerName').textContent=d.name;
