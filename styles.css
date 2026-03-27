@@ -152,10 +152,8 @@ body {
   box-shadow: 0 2px 12px rgba(0,0,0,0.12);
 }
 .topbar-inner {
-  max-width: 1200px; margin: 0 auto;
   padding: 0 32px; height: 52px;
-  display: flex; align-items: center; justify-content: center;
-  gap: 20px;
+  display: flex; align-items: center; position: relative;
 }
 .topbar-brand {
   width: 30px; height: 30px; border-radius: 50%;
@@ -167,7 +165,10 @@ body {
   transition: all 0.25s;
 }
 .topbar-brand:hover { background: rgba(201,169,110,0.12); }
-.topbar-nav { display: flex; gap: 24px; }
+.topbar-nav {
+  display: flex; gap: 24px;
+  position: absolute; left: 50%; transform: translateX(-50%);
+}
 .topbar-link {
   color: rgba(255,255,255,0.65); text-decoration: none;
   font-size: 14px; font-weight: 600;
