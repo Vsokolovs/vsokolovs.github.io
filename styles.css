@@ -112,6 +112,34 @@ body {
 }
 .skill-tag:hover { border-color: var(--sidebar-accent); color: var(--sidebar-accent); }
 
+/* Collapsible toggle */
+.collapsible-toggle {
+  cursor: pointer; display: flex; align-items: center; justify-content: space-between;
+  user-select: none;
+}
+.toggle-arrow {
+  font-size: 12px; transition: transform 0.3s ease; display: inline-block;
+  color: var(--sidebar-accent);
+}
+.collapsible-toggle.collapsed .toggle-arrow { transform: rotate(-90deg); }
+.collapsible-content {
+  overflow: hidden; transition: max-height 0.35s ease, opacity 0.3s ease;
+  max-height: 500px; opacity: 1;
+}
+.collapsible-content.collapsed {
+  max-height: 0; opacity: 0;
+}
+
+/* Skills show more */
+.skill-tag.hidden-skill { display: none; }
+.skills-show-more {
+  background: none; border: 1px solid rgba(255,255,255,0.15);
+  color: var(--sidebar-accent); font-size: 11px; padding: 3px 14px;
+  border-radius: 20px; cursor: pointer; margin-top: 6px;
+  transition: all 0.25s; font-family: var(--font-body);
+}
+.skills-show-more:hover { border-color: var(--sidebar-accent); background: rgba(201,169,110,0.1); }
+
 .lang-item { margin-bottom: 10px; }
 .lang-name { font-size: 12px; margin-bottom: 4px; color: rgba(255,255,255,0.8); }
 .lang-bar-track { height: 3px; background: rgba(255,255,255,0.08); border-radius: 2px; overflow: hidden; }

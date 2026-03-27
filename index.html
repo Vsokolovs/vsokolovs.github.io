@@ -28,8 +28,15 @@
       <h1 class="sidebar-name" id="sidebarName"></h1>
       <p class="sidebar-title" id="sidebarTitle"></p>
       <div class="sidebar-section"><div class="sidebar-section-label">Contact</div><div id="contactList"></div></div>
-      <div class="sidebar-section"><div class="sidebar-section-label">Education</div><div id="educationList"></div></div>
-      <div class="sidebar-section"><div class="sidebar-section-label">Skills</div><div id="skillsList"></div></div>
+      <div class="sidebar-section">
+        <div class="sidebar-section-label collapsible-toggle" id="educationToggle">Education<span class="toggle-arrow">&#9662;</span></div>
+        <div class="collapsible-content" id="educationList"></div>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-section-label">Skills</div>
+        <div id="skillsList"></div>
+        <button class="skills-show-more" id="skillsToggle" style="display:none;">Show more</button>
+      </div>
       <div class="sidebar-section"><div class="sidebar-section-label">Languages</div><div id="languagesList"></div></div>
     </div>
   </aside>

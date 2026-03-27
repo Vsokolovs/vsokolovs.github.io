@@ -66,9 +66,24 @@ function renderHome(){
     }).join('');
   }
 
-  // Skills
+  // Skills (show first 8, rest hidden)
   if($('skillsList')){
-    $('skillsList').innerHTML=d.skills.map(function(s){return '<span class="skill-tag">'+esc(s)+'</span>';}).join('');
+    var VISIBLE_COUNT=8;
+    $('skillsList').innerHTML=d.skills.map(function(s,i){
+      return '<span class="skill-tag'+(i>=VISIBLE_COUNT?' hidden-skill':'')+'">'+esc(s)+'</span>';
+    }).join('');
+    var toggleBtn=$('skillsToggle');
+    if(toggleBtn && d.skills.length>VISIBLE_COUNT){
+      toggleBtn.style.display='inline-block';
+      toggleBtn.addEventListener('click',function(){
+        var tags=$('skillsList').querySelectorAll('.skill-tag');
+        var expanded=toggleBtn.textContent==='Show less';
+        tags.forEach(function(tag,i){
+          if(i>=VISIBLE_COUNT) tag.classList.toggle('hidden-skill',expanded);
+        });
+        toggleBtn.textContent=expanded?'Show more':'Show less';
+      });
+    }
   }
 
   // Languages
@@ -129,6 +144,16 @@ async function init(){
   DATA=await loadData();
   if($('sidebarName')) renderHome();
   if($('projectsGrid')) renderProjects();
+
+  // Education collapsible toggle
+  var eduToggle=$('educationToggle');
+  if(eduToggle){
+    eduToggle.addEventListener('click',function(){
+      eduToggle.classList.toggle('collapsed');
+      var content=$('educationList');
+      if(content) content.classList.toggle('collapsed');
+    });
+  }
 
   // Mobile hamburger
   var hb=$('hamburgerBtn');
