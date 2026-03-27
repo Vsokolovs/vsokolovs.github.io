@@ -154,13 +154,14 @@ body {
 .topbar-inner {
   max-width: 1200px; margin: 0 auto;
   padding: 0 32px; height: 52px;
-  display: flex; align-items: center; justify-content: space-between;
+  display: flex; align-items: center; justify-content: center;
+  gap: 20px;
 }
 .topbar-brand {
-  width: 32px; height: 32px; border-radius: 50%;
-  border: 2px solid var(--sidebar-accent);
+  width: 30px; height: 30px; border-radius: 50%;
+  border: 1.5px solid var(--sidebar-accent);
   display: flex; align-items: center; justify-content: center;
-  font-family: var(--font-display); font-size: 12px;
+  font-family: var(--font-display); font-size: 11px;
   color: var(--sidebar-accent); letter-spacing: 1px;
   text-decoration: none; flex-shrink: 0;
   transition: all 0.25s;
